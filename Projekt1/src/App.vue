@@ -1,9 +1,31 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
 import TheWelcome from './components/TheWelcome.vue'
+import { ref,computed } from 'vue'
+
+const count = ref(0)
+
+function increment() {
+  count.value++
+return green
+}
+function decrement() {
+  count.value--
+return red
+}
+function reset() {
+  count.value=0
+}
+
 </script>
 
 <template>
+
+<p>Počet: {{ count }}</p>
+  <button @click="increment">Pridať</button>
+  <button @click="decrement">Odobrať</button>
+  <button @click="reset">Reset</button>
+
   <header>
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
@@ -18,6 +40,14 @@ import TheWelcome from './components/TheWelcome.vue'
 </template>
 
 <style scoped>
+
+.red{
+  color:red;
+}
+.green{
+  color: green;
+}
+
 header {
   line-height: 1.5;
 }
@@ -37,6 +67,8 @@ header {
   .logo {
     margin: 0 2rem 0 0;
   }
+  
+  
 
   header .wrapper {
     display: flex;
